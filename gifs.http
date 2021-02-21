@@ -1,0 +1,56 @@
+# api = http://localhost:10000
+
+GET {{api}}/cache?query={{query}}
+X-BSA-GIPHY: ""
+###
+
+POST {{api}}/cache/generate
+Content-Type: application/json
+X-BSA-GIPHY: ""
+
+{
+ "query": {{body_query}}
+}
+###
+
+DELETE {{api}}/cache
+X-BSA-GIPHY: ""
+###
+
+GET {{api}}/gifs
+X-BSA-GIPHY: ""
+###
+
+GET {{api}}/user/{{id}}/all
+X-BSA-GIPHY: ""
+###
+
+GET {{api}}/user/{{id}}/history
+X-BSA-GIPHY: ""
+###
+
+DELETE {{api}}/user/{{id}}/history/clean
+X-BSA-GIPHY: ""
+###
+
+GET {{api}}/user/{{id}}/search?query={{query}}&force=true
+X-BSA-GIPHY: ""
+###
+
+POST {{api}}/user/{{id}}/generate
+Content-Type: application/json
+X-BSA-GIPHY: ""
+
+{
+ "query": {{body_query}},
+ "force": true
+}
+###
+
+DELETE {{api}}/user/{{id}}/reset?query={{query}}
+X-BSA-GIPHY: ""
+###
+
+DELETE {{api}}/user/{{id}}/clean
+X-BSA-GIPHY: ""
+###
